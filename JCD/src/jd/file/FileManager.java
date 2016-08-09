@@ -46,10 +46,6 @@ import static jf.components.AppStyleArbiter.DIAGRAM_VBOX_SELECTED;
 /**
  * This class serves as the file management component for this application,
  * providing all I/O services.
- *
- * @author Richard McKenna
- * @author ?
- * @version 1.0
  */
 public class FileManager implements AppFileComponent {
 
@@ -102,7 +98,7 @@ public class FileManager implements AppFileComponent {
     
     /**
      * This method is for saving user work, which in the case of this
-     * application means the data that constitutes the page DOM.
+     * application means the data that constitutes all class diagrams.
      * 
      * @param data The data management component for this application.
      * 
@@ -309,6 +305,7 @@ public class FileManager implements AppFileComponent {
         return jso;
     }
     
+    // FILL THE ARRAY WITH ARUMENTS
     public void fillArrayWithArguments(ArrayList<ArgumentObject> arguments, JsonArrayBuilder arrayBuilder){
         
         for(ArgumentObject arg : arguments){
@@ -317,6 +314,7 @@ public class FileManager implements AppFileComponent {
         }
     }
     
+    // MAKE ARGUMENT JSON OBJECT
     public JsonObject makeArgumentJsonObject(ArgumentObject arg){
         JsonObject jso = Json.createObjectBuilder()
                 .add(JSON_ARG_NAME, arg.getName())

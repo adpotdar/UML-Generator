@@ -363,11 +363,12 @@ public class Workspace extends AppWorkspaceComponent {
         initStyle();
     }
 
-    // TO GET Prent tex field
+    // TO GET THE PARENT TEXT FIELD
     public TextField getParentTextField() {
         return parentTextField;
     }
     
+    // ATTACH ALL THE EVENT HANDLERS TO ALL THE COMPONENTS OF THE GUI REPECTIVELY
     public void addEventHandlers(){
         
         PageEditController = new pageEditController(app);
