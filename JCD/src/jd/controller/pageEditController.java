@@ -55,7 +55,7 @@ public class pageEditController {
         selectedDiagram = null;
     }
    
-    // ADD THE DIAGRAM TO PANE
+    // ADD THE DIAGRAM(BOX) TO PANE
     public void handleAddClassRequest(Pane pane){
         
         // TO MAKE SURE THAT YOU CAN SELECT
@@ -78,6 +78,7 @@ public class pageEditController {
  
     }
     
+    // ADD THE INTERFACE DIAGRAM(BOX) TO THE PANE
     public void handleAddInterfaceRequest(Pane pane){
         
         // TO MAKE SURE THAT YOU CAN SELECT

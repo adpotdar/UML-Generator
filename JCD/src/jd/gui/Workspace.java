@@ -214,11 +214,13 @@ public class Workspace extends AppWorkspaceComponent {
         // INIT CHECKBOXES
         checkBoxes = new VBox(2);
         
+        // GRID CHECKBOX
         gridHBox = new HBox();
         gridBox = new CheckBox();
         gridLabel = new Label("Grid");
         gridHBox.getChildren().addAll(gridBox,gridLabel);
         
+        // SNAP CHECKBOX
         snapHBox = new HBox();
         snapBox = new CheckBox();
         snapLabel = new Label("Snap");
@@ -306,7 +308,7 @@ public class Workspace extends AppWorkspaceComponent {
         methodTable = new TableView();
         row5_1.getChildren().addAll(methodLabel,methodPlus,methodMinus);
         
-            // INIT ALL COLUMNS OF ROW 5
+        // INIT ALL COLUMNS OF ROW 5
         nameMethodCol = new TableColumn<>("Name");
         nameMethodCol.setCellValueFactory(new PropertyValueFactory("name"));
         returnCol = new TableColumn<>("Return");

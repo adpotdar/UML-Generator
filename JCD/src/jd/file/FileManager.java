@@ -49,6 +49,7 @@ import static jf.components.AppStyleArbiter.DIAGRAM_VBOX_SELECTED;
  */
 public class FileManager implements AppFileComponent {
 
+    // BASIC ATTRIBUTES
     final String JSON_CLASS_DIAGRAM_X = "x";
     final String JSON_CLASS_DIAGRAM_Y = "y";
     final String JSON_CLASS_NAME = "name";
