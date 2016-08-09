@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This XML file allows us to easily customize the look and language used
+    in our program's user interface. Note that this properties file is only
+    for the workspace controls, which are custom for each application
+-->
+<properties>
+    <property_list>
+        <!-- PROGRAM ICON FILES -->
+	<property name="RESIZE_ICON"		value="resize.png"></property>
+    <property name="ADD_CLASS_ICON"		value="addClass.png"></property>
+	<property name="ADD_INTERFACE__ICON"		value="addInterface.png"></property>
+	<property name="REMOVE_ICON"	value="remove.png"></property>
+	<property name="UNDO_ICON"	value="undo.png"></property>
+	<property name="REDO_ICON"		value="redo.png"></property>
+    <property name="ZOOM_IN_ICON"		value="zoomIn.png"></property>
+	<property name="ZOOM_OUT_ICON"		value="zoomOut.png"></property>
+    
+        
+        <!-- TOOLTIPS FOR BUTTONS -->
+	<property name="SELECT_TOOLTIP"	    value="Use Shape Selection Tool"></property>
+    <property name="RESIZE_TOOLTIP"	    value="Remove Element"></property>
+	<property name="ADD_CLASS_TOOLTIP"	    value="Draw Rectangle"></property>
+	<property name="ADD_INTERFACE_TOOLTIP"	    value="Draw Ellipse"></property>
+	<property name="REMOVE_TOOLTIP"	    value="Move Shape to Back"></property>
+	<property name="UNDO_TOOLTIP"	    value="Move Shape to Front"></property>
+	<property name="REDO_TOOLTIP"	    value="Select Background Color"></property>
+	<property name="ZOOM_IN_TOOLTIP"		    value="Select Fill Color"></property>
+	<property name="ZOOM_OUT_TOOLTIP"	    value="Select Outline Color"></property>
+ 	
+	<!-- MESSAGES -->
+	<property name="REMOVE_ELEMENT_MESSAGE"	    value="Are you sure you wish to remove that element?"></property>
+		
+	<!-- ERROR MESSAGES AND TITLES FOR THEIR DIALOGS -->
+	<property name="ATTRIBUTE_UPDATE_ERROR_MESSAGE"	    value="WARNING: An error occured updating the element's attribute."></property>
+	<property name="ATTRIBUTE_UPDATE_ERROR_TITLE"	    value="Attribute Update Error"></property>
+	<property name="UPDATE_ERROR_MESSAGE"		    value="An error occured updating the UI"></property>
+	<property name="UPDATE_ERROR_TITLE"		    value="UI Update Error"></property>
+    </property_list>
+    <property_options_list>
+    </property_options_list>
+</properties>

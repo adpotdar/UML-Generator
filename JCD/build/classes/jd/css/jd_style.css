@@ -1,0 +1,69 @@
+
+// CSS CLASS FOR PAGE EDITING BUTTONS
+.tag_button {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+// CSS CLASS FOR PANES TO FILL THEIR FULL REGION
+.max_pane {
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+    -fx-background-color:#ccccff;
+}
+
+// CSS CLASS FOR LABELS HEADING LARGE SECTIONS IN THE GUI
+.heading_label {
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+}
+
+// CSS CLASS FOR LABELS HEADING SUBSECTIONS IN THE GUI
+.subheading_label {
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+// CSS CLASS FOR LABELS SERVING AS PROMPTS IN THE GUI
+.prompt_label {
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+}
+
+// CSS CLASS FOR TEXT FIELDS AT UI PROMPTS
+.prompt_text_field {
+    -fx-font-size: 13pt;
+}
+
+// CSS FOR THE VBOXES
+.diagram_vbox{
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+}
+
+// CS SFOR THE RIGHT PANE
+.right_pane{
+    -fx-background-color: #0EBFE9;
+}
+
+// CSS FOR THE FILE TOOLBAR
+.file_toolbar{
+    -fx-background-color: #1E90FF;
+}
+
+// CSS TO MAKE THE DIAGRAM LOOK SELECTED
+.diagram_vbox_selected{
+    
+    -fx-border-width: 3px;
+    -fx-border-color: #0EBFE9;
+}
