@@ -144,6 +144,7 @@ public class pageEditController {
         
     }
     
+    // HANDLE THE ZOOM IN REQUEST
     public void handleZoomInRequest(Pane pane){
         if(pane.getScaleX()+0.2 > 2 ){
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -167,7 +168,8 @@ public class pageEditController {
             pane.setScaleY(pane.getScaleY()-0.2);
         }
     }
-    // TO ADD THE GRIDS
+    
+    // TO ADD THE GRIDS IN THE BACKGROUND
     public void handleAddGridRequest(Pane pane){
         
         for(double i=0;i<pane.getWidth();i=i+15){
@@ -212,6 +214,7 @@ public class pageEditController {
         }
     }
     
+    // TAKE A SNAPSHOT OF THE UML DIAGRAM AND SAVE IT
     public void handleSnapshotRequest(Pane pane){
         Workspace work  = (Workspace)app.getWorkspaceComponent();
         
@@ -236,8 +239,10 @@ public class pageEditController {
 	}
     } 
     
+    // THIS METHOD REMOVES A CLASS DIAGRAM AND ALL THE CONNECTORS THAT THE CLASS DIAGRAM WAS CONNECTED TO
     public void removeClassDiagram(ClassDiagram diagram,Pane pane){
         
+        // REMOVE THE INHERITANCE LINES COMING IN THE DIAGRAM
         for(Line line: diagram.getInheritanceLinesComingIn()){
             
             if(((InheritanceLines)line).getChildDiagram() instanceof ClassDiagram){
@@ -252,6 +257,7 @@ public class pageEditController {
             pane.getChildren().remove(((InheritanceLines)line).getArrowContainer());
         }
         
+        // REMOVE THE INHERITANCE LINES GOING OUT OF THE DIAGRAM
         for(Line line: diagram.getInheritanceLinesGoingOut()){
             
             if(((InheritanceLines)line).getChildDiagram() instanceof ClassDiagram){
@@ -265,6 +271,7 @@ public class pageEditController {
             pane.getChildren().remove(((InheritanceLines)line).getArrowContainer());
         }
         
+        // REMOVE THE METHOD LINES COMING INTO THE CLASS DIAGRAM
         for(Line line: diagram.getMethodLinesComingIn()){
             
             if(((MethodLines)line).getChildDiagram() instanceof ClassDiagram){
@@ -278,6 +285,7 @@ public class pageEditController {
             pane.getChildren().remove(((MethodLines)line).getArrowContainer());
         }
         
+        // REMOVE THE METHOD LINES GOING OUT OF THE CLASS DIAGRAM
         for(Line line: diagram.getMethodLinesGoingOut()){
             if(((MethodLines)line).getChildDiagram() instanceof ClassDiagram){
                 ClassDiagram dig = (ClassDiagram)((MethodLines)line).getChildDiagram();
@@ -291,6 +299,7 @@ public class pageEditController {
             pane.getChildren().remove(((MethodLines)line).getArrowContainer());
         }
         
+        // REMOVE THE USELINES COMING IN
         for(Line line: diagram.getUseLinesComingIn()){
             
             if(((UseLines)line).getChildDiagram() instanceof ClassDiagram){
@@ -304,6 +313,7 @@ public class pageEditController {
             pane.getChildren().remove(((UseLines)line).getArrowContainer());
         }
         
+        // REMOVE THE USE LINES GOING OUT
         for(Line line: diagram.getUseLinesGoingOut()){
             if(((UseLines)line).getChildDiagram() instanceof ClassDiagram){
                 ClassDiagram dig = (ClassDiagram)((UseLines)line).getChildDiagram();
@@ -317,10 +327,10 @@ public class pageEditController {
             pane.getChildren().remove(((UseLines)line).getArrowContainer());
         }
         
-        // REMOVE THE DIAGRAM FROM THE LIST OF DIAGRAMS
         // REMOVE THE INTERFACE FROM THE LIST OF INTERFACES
         interfacesPresent.remove(diagram.getClassName());
         
+        // REMOVE THE DIAGRAM FROM THE LIST OF DIAGRAMS
         diagramsList.remove(diagram);
         
         // REMOVE THE MAIN CLASS DIAGRAM

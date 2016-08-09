@@ -113,6 +113,7 @@ public class DataManager implements AppDataComponent {
         packageNames.add(name);
     }
     
+    // ADD THE NEWLY ADDED PACKAGE TO THE LIST OF PACKAGES
     public void addToPackageList(String oldName,String newName){
         for(int i=0;i<packageNames.size();i++){
             String s = packageNames.get(i);
@@ -122,6 +123,7 @@ public class DataManager implements AppDataComponent {
         }
     }
     
+    // EXPORT TO EXECUTABLE CODE
     public void exportToCode(Window window){
         
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -161,6 +163,7 @@ public class DataManager implements AppDataComponent {
         }
     }
 
+    // GET LIST OF DIFFERENT PACKAGES PRESENT IN THE UML DIAGRAM
     private ArrayList<String> getDifferentPackages() {          
           
         ArrayList<String> diff = new ArrayList<String>();
@@ -179,6 +182,7 @@ public class DataManager implements AppDataComponent {
         return diff;
     }
 
+    // FIND CLASSES WHICH SHARE SAME PACKAGE NAME
     public ArrayList<ClassDiagram> findClassByPackage(String name){
        ArrayList<ClassDiagram> samePackage = new ArrayList<ClassDiagram>();
         
@@ -342,10 +346,12 @@ public class DataManager implements AppDataComponent {
         
     } 
     
+    
     public void pushOnStack(Action action){
         undoStack.push(action);
     }
     
+    // UNDO
     public void undoAction(){
         
         Action action = undoStack.pop();
@@ -362,6 +368,7 @@ public class DataManager implements AppDataComponent {
         
     }
     
+    // REDO
     public void redoAction(){
         
          Action action = redoStack.pop();
@@ -375,6 +382,7 @@ public class DataManager implements AppDataComponent {
         }
     }
     
+    //  CHECK IF THE BOX IS LOCAL
     public ForeignClassBox isLocalBox(String name){
         
         boolean local = false;
