@@ -1,5 +1,6 @@
-package Actions;
+package jd.action;
 
+import jd.action.Action;
 import javafx.scene.layout.VBox;
 import jd.data.ClassDiagram;
 

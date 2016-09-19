@@ -66,10 +66,6 @@ public class AppRemoveVariableSingleton extends Stage {
      * @param owner The window above which this dialog will be centered.
      */
     public void init(Stage owner) {
-        
-//        // MAKE IT MODAL
-//        initModality(Modality.WINDOW_MODAL);
-//        initOwner(owner);
 
         // LABEL TO DISPLAY THE CUSTOM MESSAGE
         messageLabel = new Label();        

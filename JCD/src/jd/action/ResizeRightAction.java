@@ -1,5 +1,6 @@
-package Actions;
+package jd.action;
 
+import jd.action.Action;
 import jd.data.ClassDiagram;
 
 /**

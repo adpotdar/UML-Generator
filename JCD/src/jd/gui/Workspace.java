@@ -82,8 +82,6 @@ public class Workspace extends AppWorkspaceComponent {
     public static double LEFT_PANE_WIDTH = 970;
     public static double LEFT_PANE_HEIGHT = 480;
     
-//    public static double SPLIT_PANE_WIDTH = 1700;
-//    public static double SPLIT_PANE_HEIGHT = 900;
     // HERE'S THE APP
     AppTemplate app;
 

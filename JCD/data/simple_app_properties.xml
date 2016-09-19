@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     This XML file allows us to easily customize the look and language used
-    in our program's user interface. Note that this properties file is only
-    for the standard controls for an app from the SimpleAppFramework, so
-    it would not include things initialized for the workspace, which is
-    customizable.
--->
+    in our program's user interface. -->
 <properties>
     <property_list>
         <property name="APP_TITLE"	    value="The JClass Designer"></property>

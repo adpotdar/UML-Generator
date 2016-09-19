@@ -1,9 +1,9 @@
 package jd.data;
 
-import Actions.Action;
-import Actions.DragDiagramAction;
-import Actions.ResizeLeftAction;
-import Actions.ResizeRightAction;
+import jd.action.Action;
+import jd.action.DragDiagramAction;
+import jd.action.ResizeLeftAction;
+import jd.action.ResizeRightAction;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;

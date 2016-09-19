@@ -29,10 +29,12 @@ public class ClassDiagram extends Diagram{
     // TRUE IF DIAGRAM IS CLASS AND FALSE IF THE DIAGRAM IS INTERFACE
     public  boolean classType;
     
+    // NUMBER OF CLASS DIAGRAMS PRESENT
     private static int counter=0;
     
     AppTemplate app;
     
+    // COORDINATES OF THE CLASS DIAGRAM
     double x;
     double y;
     
@@ -79,70 +81,7 @@ public class ClassDiagram extends Diagram{
     ArrayList<UseLines> useLinesComingIn = new ArrayList<UseLines>();
     ArrayList<UseLines> useLinesGoingOut    = new ArrayList<UseLines>();
 
-    public ArrayList<String> getLocalInterfaces() {
-        return localInterfaces;
-    }
-
-    public ArrayList<String> getExternalInterfaces() {
-        return externalInterfaces;
-    }
-
-    
-    public ArrayList<String> getImportedPackages() {
-        return importedPackages;
-    }
-
-    public void setImportedPackages(ArrayList<String> s){
-        this.importedPackages = s;
-    }
-    
-    public ArrayList<InheritanceLines> getInheritanceLinesComingIn() {
-        return inheritanceLinesComingIn;
-    }
-
-    public ArrayList<InheritanceLines> getInheritanceLinesGoingOut() {
-        return inheritanceLinesGoingOut;
-    }
-
-    public ArrayList<MethodLines> getMethodLinesComingIn() {
-        return methodLinesComingIn;
-    }
-
-    public ArrayList<MethodLines> getMethodLinesGoingOut() {
-        return methodLinesGoingOut;
-    }
-
-    public ArrayList<UseLines> getUseLinesComingIn() {
-        return useLinesComingIn;
-    }
-
-    public ArrayList<UseLines> getUseLinesGoingOut() {
-        return useLinesGoingOut;
-    }
-    
-    /*
-    * THIS CLASS REPRESENTS A DIAGRAM OBJECT. IT CONTAINS THREE VBOXES INSIDE ONE VBOX.
-    *
-    */
-    public void addComingInLine(Line line){
-        if(line instanceof InheritanceLines){
-            inheritanceLinesComingIn.add((InheritanceLines)line);
-        }else if(line instanceof MethodLines){
-            methodLinesComingIn.add((MethodLines)line);
-        }else if(line instanceof UseLines){
-            useLinesComingIn.add((UseLines)line);
-        }
-    }
-    public void addGoingOutLine(Line line){
-        if(line instanceof InheritanceLines){
-            inheritanceLinesGoingOut.add((InheritanceLines)line);
-        }else if(line instanceof MethodLines){
-            methodLinesGoingOut.add((MethodLines)line);
-        }else if(line instanceof UseLines){
-            useLinesGoingOut.add((UseLines)line);
-        }
-    }
-    
+    // CONSTRUCTOR 1
     public ClassDiagram(Pane pane, boolean isClass){
        
         // DEFAULT NAME
@@ -199,63 +138,8 @@ public class ClassDiagram extends Diagram{
         initStyle();
         
     }
-
-    public ClassDiagram(boolean isClass){
-       
-        // DEFAULT NAME
-        className = new Text("name"+counter++);  
-        
-        // INIT CLASS TYPE
-       classType = isClass; 
-                
-        // INIT THE METHODS LIST
-        methodsList = new ArrayList<MethodsObject>();
-        
-        // INIT VARIABLES LIST
-        variablesList = new ArrayList<VariablesObject>();
-        
-        //INIT THE LOCAL INTERFACES BEING IMPLEMENTED LIST
-        localInterfaces = new ArrayList<String>();
-        externalInterfaces = new ArrayList<String>();
-        importedPackages = new ArrayList<String>();
-        
-        // INIT THE EXTERNAL INTERFACE
-        
-        // INIT ALL VBOXES
-        rootContainer = new VBox(5);
-        one = new VBox();
-        two = new VBox();
-        three = new VBox();
- 
-        // ADD THE LINES TO THE DIAGRAM
-        leftLine = new Line();
-        rightLine = new Line();
-        
-        //BINDING THE LEFT LINE
-        leftLine.startXProperty().bind(rootContainer.layoutXProperty());
-        leftLine.startYProperty().bind(rootContainer.layoutYProperty());
-
-        leftLine.endXProperty().bind(leftLine.startXProperty());
-        leftLine.endYProperty().bind(leftLine.startYProperty().add(rootContainer.heightProperty()));
-
-        leftLine.setStroke(Color.WHITE);
-        leftLine.setStrokeWidth(3);
-                                              
-        //BINDING THE RIGHT LINE
-        rightLine.startXProperty().bind(rootContainer.layoutXProperty().add(rootContainer.widthProperty()));
-        rightLine.startYProperty().bind(rootContainer.layoutYProperty());
-
-        rightLine.endXProperty().bind(rightLine.startXProperty());
-        rightLine.endYProperty().bind(rightLine.startYProperty().add(rootContainer.heightProperty()));
-
-        rightLine.setStroke(Color.WHITE);
-        rightLine.setStrokeWidth(3);
-        
-        // SET THE STYLE OF VBOX more like ADD BORDER
-        initStyle();
-        
-    }
     
+    // CONSTRUCTOR 2
     public ClassDiagram(Pane pane, double x, double y,boolean isClass) {
        // DEFAULT NAME
         className = new Text("name"+counter++);  
@@ -303,6 +187,71 @@ public class ClassDiagram extends Diagram{
         initStyle(); 
     }
     
+    // GETTERS
+    public ArrayList<String> getLocalInterfaces() {
+        return localInterfaces;
+    }
+
+    public ArrayList<String> getExternalInterfaces() {
+        return externalInterfaces;
+    }
+
+    
+    public ArrayList<String> getImportedPackages() {
+        return importedPackages;
+    }
+
+    public void setImportedPackages(ArrayList<String> s){
+        this.importedPackages = s;
+    }
+    
+    public ArrayList<InheritanceLines> getInheritanceLinesComingIn() {
+        return inheritanceLinesComingIn;
+    }
+
+    public ArrayList<InheritanceLines> getInheritanceLinesGoingOut() {
+        return inheritanceLinesGoingOut;
+    }
+
+    public ArrayList<MethodLines> getMethodLinesComingIn() {
+        return methodLinesComingIn;
+    }
+
+    public ArrayList<MethodLines> getMethodLinesGoingOut() {
+        return methodLinesGoingOut;
+    }
+
+    public ArrayList<UseLines> getUseLinesComingIn() {
+        return useLinesComingIn;
+    }
+
+    public ArrayList<UseLines> getUseLinesGoingOut() {
+        return useLinesGoingOut;
+    }
+    
+    // ADD A CONNECTOR GOING IN
+    public void addComingInLine(Line line){
+        if(line instanceof InheritanceLines){
+            inheritanceLinesComingIn.add((InheritanceLines)line);
+        }else if(line instanceof MethodLines){
+            methodLinesComingIn.add((MethodLines)line);
+        }else if(line instanceof UseLines){
+            useLinesComingIn.add((UseLines)line);
+        }
+    }
+    
+    // ADD A CONNECTOR GOING OUT
+    public void addGoingOutLine(Line line){
+        if(line instanceof InheritanceLines){
+            inheritanceLinesGoingOut.add((InheritanceLines)line);
+        }else if(line instanceof MethodLines){
+            methodLinesGoingOut.add((MethodLines)line);
+        }else if(line instanceof UseLines){
+            useLinesGoingOut.add((UseLines)line);
+        }
+    }
+        
+    // SET THE FEATURES OF THE CLASS DIAGRAM
     public void setFeatures(){
         // SET FEATURES OF ONE
         one.setMinHeight(50);
@@ -383,6 +332,7 @@ public class ClassDiagram extends Diagram{
             three.getChildren().add(temp);
         }
     }
+    
     // GETTERS GETTERS
     public boolean getClassType() {
         return classType;

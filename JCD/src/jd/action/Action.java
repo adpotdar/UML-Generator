@@ -1,4 +1,4 @@
-package Actions;
+package jd.action;
 
 /**
  * PARENT CLASS FOR ALL TYPE OF ACTIONS

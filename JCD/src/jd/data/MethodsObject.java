@@ -25,30 +25,7 @@ public class MethodsObject {
         this.arguments = arguments;
     }
     
-    public String getName() {
-        return name;
-    }
-
-    public String getReturnType() {
-        return returnType;
-    }
-
-    public boolean isIsStatic() {
-        return isStatic;
-    }
-
-    public boolean isIsAbstract() {
-        return isAbstract;
-    }
-
-    public String getAccessIdentifier() {
-        return accessIdentifier;
-    }
-
-    public ArrayList<ArgumentObject> getArguments() {
-        return arguments;
-    }
-    
+    // TO STRING
     public String toString(){
         String acc ="";
         if(accessIdentifier.equalsIgnoreCase("public")){
@@ -111,5 +88,30 @@ public class MethodsObject {
             header += "return null; \n}";
         }
         return header;
+    }
+     
+    // GETTERS
+    public String getName() {
+        return name;
+    }
+
+    public String getReturnType() {
+        return returnType;
+    }
+
+    public boolean isIsStatic() {
+        return isStatic;
+    }
+
+    public boolean isIsAbstract() {
+        return isAbstract;
+    }
+
+    public String getAccessIdentifier() {
+        return accessIdentifier;
+    }
+
+    public ArrayList<ArgumentObject> getArguments() {
+        return arguments;
     }
 }

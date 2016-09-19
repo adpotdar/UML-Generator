@@ -13,7 +13,7 @@ import jd.lines.MethodLines;
 import jd.lines.UseLines;
 
 /** 
- * THIS WILL REPRESENTS THE BLACK BOX THAT APPEARS ON 
+ *  THIS WILL REPRESENTS THE BLACK BOX THAT APPEARS ON 
  *  DIAGRAM WHEN YOU IMPORT OR USE SOME CLASS THAT HAVE NOT 
  *  BEEN CREATED BY THE USER
  */
@@ -49,7 +49,7 @@ public class ForeignClassBox extends Diagram{
         vbox.setLayoutX(Math.random()*400+100);
         vbox.setLayoutY(Math.random()*60+30);
         
-        // DELETE SHT
+        // DELETE 
         vbox.setOnMouseClicked(e ->{
             if(e.getClickCount() >=2){
                 pane.getChildren().remove(vbox);
@@ -105,7 +105,7 @@ public class ForeignClassBox extends Diagram{
         vbox.setLayoutX(x);
         vbox.setLayoutY(y);
         
-        // DELETE SHT
+        // DELETE
         vbox.setOnMouseClicked(e ->{
             if(e.getClickCount() >=2){
                 pane.getChildren().remove(vbox);
@@ -146,14 +146,7 @@ public class ForeignClassBox extends Diagram{
         
     }
     
-    public String getName() {
-        return name;
-    }
-    
-    public VBox getVBox(){
-        return vbox;
-    }
-    
+    // ADD A CONNECTER LINE TO THE DIAGRAM
     public void addComingInLine(Line line){
         if(line instanceof InheritanceLines){
             inheritanceLinesComingIn.add((InheritanceLines)line);
@@ -164,6 +157,26 @@ public class ForeignClassBox extends Diagram{
         }
     }
    
+    // REMOVE THE CONNECTOR LINE
+    public void removeLineFromParentHalf(Line line){
+        if(line instanceof InheritanceLines){
+            this.getInheritanceLinesComingIn().remove(line);
+        }else if(line instanceof MethodLines){
+            this.getMethodLinesComingIn().remove(line);
+        }else if(line instanceof UseLines){
+            this.getUseLinesComingIn().remove(line);
+        }
+    }
+    
+    // GETTERS
+    public String getName() {
+        return name;
+    }
+    
+    public VBox getVBox(){
+        return vbox;
+    }
+    
     public ArrayList<InheritanceLines> getInheritanceLinesComingIn() {
         return inheritanceLinesComingIn;
     }
@@ -176,13 +189,4 @@ public class ForeignClassBox extends Diagram{
         return useLinesComingIn;
     }
     
-    public void removeLineFromParentHalf(Line line){
-        if(line instanceof InheritanceLines){
-            this.getInheritanceLinesComingIn().remove(line);
-        }else if(line instanceof MethodLines){
-            this.getMethodLinesComingIn().remove(line);
-        }else if(line instanceof UseLines){
-            this.getUseLinesComingIn().remove(line);
-        }
-    }
 }

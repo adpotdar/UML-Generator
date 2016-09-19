@@ -1,7 +1,7 @@
 package jd.data;
 /**
  * THIS CLASS WILL REPRESENT A VARIABLE OBJECT, 
- *  THAT IS IT WILL REPRESENT A VARIABLE.
+ *  i.e IT WILL REPRESENT A VARIABLE.
  */
 public class VariablesObject {
 
@@ -18,26 +18,6 @@ public class VariablesObject {
         this.isStatic = isStatic;
         this.isFinal = isFinal;
         this.access = access;
-    }
-    
-    public boolean isIsFinal() {
-        return isFinal;
-    }
-     
-    public String getName() {
-        return name;
-    }
-
-    public String getDataType() {
-        return dataType;
-    }
-
-    public boolean isIsStatic() {
-        return isStatic;
-    }
-
-    public String getAccess() {
-        return access;
     }
 
     @Override
@@ -77,5 +57,26 @@ public class VariablesObject {
         String header = getAccess()+" "+ staticc +  getDataType()+" "+ getName()+";";
         
         return header;
+    }
+    
+    // GETTERS
+    public boolean isIsFinal() {
+        return isFinal;
+    }
+     
+    public String getName() {
+        return name;
+    }
+
+    public String getDataType() {
+        return dataType;
+    }
+
+    public boolean isIsStatic() {
+        return isStatic;
+    }
+
+    public String getAccess() {
+        return access;
     }
 }
